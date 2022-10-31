@@ -17,11 +17,10 @@ Or toggle between last and:
 -  third person, with "n"
 -  reverse third person, with "m"
 
-**All** keys can bey rebounded!
-*Personaly I love toggling third person perspective with one of my mouse buttons*
+**All** keys can bey rebound!
+*Personally I love toggling third person perspective with one of my mouse buttons*
 
 Languages:
 - English US
 - Polish
 
-(plz help with them xc )

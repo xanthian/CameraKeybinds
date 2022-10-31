@@ -1,18 +1,17 @@
-package net.nubbu2.camera_keybinds;
+package net.xanthian.camera_keybinds;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.options.KeyBinding;
-import net.minecraft.client.options.Perspective;
+import net.minecraft.client.option.Perspective;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
-
 public class CameraKeybinds implements ModInitializer {
 
-	private static  Perspective lastPerspective = Perspective.FIRST_PERSON;
+	private static Perspective lastPerspective = Perspective.FIRST_PERSON;
 
 	private static KeyBinding setPerspectiveFirstPerson;
 	private static KeyBinding setPerspectiveThirdPerson;
@@ -48,9 +47,6 @@ public class CameraKeybinds implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
 		setPerspectiveFirstPerson = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.first_person_camera",
 				InputUtil.Type.KEYSYM,
@@ -144,7 +140,6 @@ public class CameraKeybinds implements ModInitializer {
 					client.options.setPerspective(lastPerspective);
 				}
 			}
-
 			heldPerspectiveFirstPersion = holdPerspective(client, holdPerspectiveFirstPerson, Perspective.FIRST_PERSON, heldPerspectiveFirstPersion);
 			heldPerspectiveThirdPersion = holdPerspective(client, holdPerspectiveThirdPerson, Perspective.THIRD_PERSON_BACK, heldPerspectiveThirdPersion);
 			heldPerspectiveThirdPersionReverse = holdPerspective(client, holdPerspectiveThirdPersonReverse, Perspective.THIRD_PERSON_FRONT, heldPerspectiveThirdPersionReverse);

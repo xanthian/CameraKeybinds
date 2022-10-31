@@ -6,30 +6,29 @@
   "name": "Camera Keybinds",
   "description": "Perspective switching keybinds",
   "authors": [
-    "lukasz@lukaszm.xyz"
+    "Lukasz825700516", "Xanthian"
   ],
   "contact": {
     "homepage": "",
-    "sources": "https://github.com/Lukasz825700516/CameraKeybinds"
+    "sources": "https://github.com/xanthian/CameraKeybinds"
   },
-
   "license": "GNU General Public License v3.0",
   "icon": "assets/camera_keybinds/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.nubbu2.camera_keybinds.CameraKeybinds"
+      "net.xanthian.camera_keybinds.CameraKeybinds"
     ]
   },
   "mixins": [ ],
 
   "depends": {
-    "fabricloader": ">=0.7.4",
+    "fabricloader": ">=0.14.9",
     "fabric": "*",
-    "minecraft": "1.16.x"
+    "minecraft": ">=1.17.1",
+    "java": ">=17"
   },
   "suggests": {
-    "flamingo": "*"
   }
 }
