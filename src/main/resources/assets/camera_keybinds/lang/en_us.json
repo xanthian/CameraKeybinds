@@ -1,12 +1,12 @@
 {
-  "category.camera_keybinds.camera_keybinds": "Camera keybinds",
-  "key.camera_keybinds.first_person_camera": "First person camera",
-  "key.camera_keybinds.third_person_camera": "Third person camera",
-  "key.camera_keybinds.third_person_reverse_camera": "Third person reverse camera",
-  "key.camera_keybinds.switch_first_person_camera": "Switch first person camera",
-  "key.camera_keybinds.switch_third_person_camera": "Switch third person camera",
-  "key.camera_keybinds.switch_third_person_reverse_camera": "Switch third person reverse camera",
-  "key.camera_keybinds.hold_first_person_camera": "Hold first person camera",
-  "key.camera_keybinds.hold_third_person_camera": "Hold third person camera",
-  "key.camera_keybinds.hold_third_person_reverse_camera": "Hold third person reverse camera"
+  "category.camera_keybinds.camera_keybinds": "Perspective Camera Keybinds",
+  "key.camera_keybinds.first_person_camera": "First Person",
+  "key.camera_keybinds.third_person_camera": "Third Person (back)",
+  "key.camera_keybinds.third_person_reverse_camera": "Third Person (front)",
+  "key.camera_keybinds.switch_first_person_camera": "Switch First Person",
+  "key.camera_keybinds.switch_third_person_camera": "Switch Third Person (back)",
+  "key.camera_keybinds.switch_third_person_reverse_camera": "Switch Third Person (front)",
+  "key.camera_keybinds.hold_first_person_camera": "Hold First Person",
+  "key.camera_keybinds.hold_third_person_camera": "Hold Third Person (back)",
+  "key.camera_keybinds.hold_third_person_reverse_camera": "Hold Third Person (front)"
 }
