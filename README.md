@@ -1,6 +1,21 @@
 # Camera Keybinds
 Minecraft mod (Fabric) for perspective switching keybinds!
 
+## Compatibility
+
+Version 4.0.0 targets Minecraft Java 1.21.9, 1.21.10 and 1.21.11 with
+Fabric Loader 0.17.2 or newer, Java 21 or newer, and Fabric API for your
+Minecraft version. Use the same mod JAR on these three releases.
+Earlier Minecraft releases require an older Camera Keybinds version.
+
+Minecraft 26.x requires a separate port: Minecraft removed obfuscation and
+Fabric renamed APIs, so the 1.21 JAR cannot be used on 26.x.
+See [Fabric's 26.1 migration notes](https://fabricmc.net/2026/03/14/261.html).
+
+Build with `./gradlew build` (or `gradlew.bat build` on Windows) using JDK 21.
+CI compiles against each supported Minecraft release. These build checks do
+not replace in-game testing of the nine keybindings.
+
 ## Features
 Change your perspective to:
 -  first person, with "i"

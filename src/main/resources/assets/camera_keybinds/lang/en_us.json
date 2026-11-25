@@ -1,5 +1,5 @@
 {
-  "category.camera_keybinds.camera_keybinds": "Camera keybinds",
+  "key.category.camera_keybinds.camera_keybinds": "Camera keybinds",
   "key.camera_keybinds.first_person_camera": "First person camera",
   "key.camera_keybinds.third_person_camera": "Third person camera",
   "key.camera_keybinds.third_person_reverse_camera": "Third person reverse camera",

@@ -1,15 +1,18 @@
 package net.xanthian.camera_keybinds;
 
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.Perspective;
 import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
-public class CameraKeybinds implements ModInitializer {
+public class CameraKeybinds implements ClientModInitializer {
+
+	private static final KeyBinding.Category CATEGORY = KeyBinding.Category.create(
+			Identifier.of("camera_keybinds", "camera_keybinds"));
 
 	private static Perspective lastPerspective = Perspective.FIRST_PERSON;
 
@@ -45,60 +48,51 @@ public class CameraKeybinds implements ModInitializer {
 	}
 
 	@Override
-	public void onInitialize() {
+	public void onInitializeClient() {
 		setPerspectiveFirstPerson = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.first_person_camera",
-				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_I,
-				"category.camera_keybinds.camera_keybinds"
+				CATEGORY
 		));
 		setPerspectiveThirdPerson = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.third_person_camera",
-				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_O,
-				"category.camera_keybinds.camera_keybinds"
+				CATEGORY
 		));
 		setPerspectiveThirdPersonReverse = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.third_person_reverse_camera",
-				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_P,
-				"category.camera_keybinds.camera_keybinds"
+				CATEGORY
 		));
 		switchPerspectiveFirstPersonAndLast = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.switch_first_person_camera",
-				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_B,
-				"category.camera_keybinds.camera_keybinds"
+				CATEGORY
 		));
 		switchPerspectiveThirdPersonAndLast = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.switch_third_person_camera",
-				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_N,
-				"category.camera_keybinds.camera_keybinds"
+				CATEGORY
 		));
 		switchPerspectiveThirdPersonReverseAndLast = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.switch_third_person_reverse_camera",
-				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_M,
-				"category.camera_keybinds.camera_keybinds"
+				CATEGORY
 		));
 		holdPerspectiveFirstPerson = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.hold_first_person_camera",
-				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_J,
-				"category.camera_keybinds.camera_keybinds"
+				CATEGORY
 		));
 		holdPerspectiveThirdPerson = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.hold_third_person_camera",
-				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_K,
-				"category.camera_keybinds.camera_keybinds"
+				CATEGORY
 		));
 		holdPerspectiveThirdPersonReverse = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"key.camera_keybinds.hold_third_person_reverse_camera",
-				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_L,
-				"category.camera_keybinds.camera_keybinds"
+				CATEGORY
 		));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {

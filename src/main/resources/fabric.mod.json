@@ -15,16 +15,16 @@
   "license": "GNU General Public License v3.0",
   "icon": "assets/camera_keybinds/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
-    "main": [
+    "client": [
       "net.xanthian.camera_keybinds.CameraKeybinds"
     ]
   },
   "depends": {
-    "fabricloader": ">=0.14.10",
-    "fabric": "*",
-    "minecraft": ">=1.17.1",
-    "java": ">=17"
+    "fabricloader": ">=0.17.2",
+    "fabric-api": "*",
+    "minecraft": ">=1.21.9 <=1.21.11",
+    "java": ">=21"
   }
 }
