@@ -23,20 +23,20 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v2
-      - name: setup jdk 21
-        uses: actions/setup-java@v4
+        uses: gradle/actions/wrapper-validation@v6
+      - name: setup jdk 25
+        uses: actions/setup-java@v6
         with:
-          java-version: 21
+          java-version: 25
           distribution: 'microsoft'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: build
         run: ./gradlew build -Pminecraft_version=${{ matrix.minecraft }} -Pyarn_mappings=${{ matrix.yarn }} -Pfabric_version=${{ matrix.fabric }}
       - name: capture build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Artifacts-${{ matrix.minecraft }}
           path: build/libs/

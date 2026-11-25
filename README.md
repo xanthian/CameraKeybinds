@@ -12,7 +12,8 @@ Minecraft 26.x requires a separate port: Minecraft removed obfuscation and
 Fabric renamed APIs, so the 1.21 JAR cannot be used on 26.x.
 See [Fabric's 26.1 migration notes](https://fabricmc.net/2026/03/14/261.html).
 
-Build with `./gradlew build` (or `gradlew.bat build` on Windows) using JDK 21.
+Build with `./gradlew build` (or `gradlew.bat build` on Windows) using JDK 25.
+The mod is compiled for Java 21; players do not need JDK 25.
 CI compiles against each supported Minecraft release. These build checks do
 not replace in-game testing of the nine keybindings.
 
