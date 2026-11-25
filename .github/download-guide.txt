@@ -1,0 +1,13 @@
+Camera Keybinds - choose ONE mod JAR
+
+Check your Minecraft version in the launcher, then use the matching file:
+
+Minecraft 26.1   -> camera_keybinds-5.0.0+mc26.1.jar
+Minecraft 26.1.1 -> camera_keybinds-5.0.0+mc26.1.1.jar
+Minecraft 26.1.2 -> camera_keybinds-5.0.0+mc26.1.2.jar
+Minecraft 26.2   -> camera_keybinds-5.0.0+mc26.2.jar
+Minecraft 26.3   -> camera_keybinds-5.0.0+mc26.3.jar
+
+Put only that JAR in your Minecraft mods folder.
+Requires Java 25, Fabric Loader 0.20.1 or newer, and Fabric API for your
+Minecraft version. Remove older Camera Keybinds JARs from the mods folder.
