@@ -6,7 +6,9 @@ plugins {
 base {
 	archivesName = project.archives_base_name
 }
-version = "${project.mod_version}+mc${project.minecraft_version}"
+def minecraftTarget = project.minecraft_version.startsWith('26.3') ? '26.3' : '26.1-26.2'
+def minecraftRange = minecraftTarget == '26.3' ? '>=26.3 <26.4' : '>=26.1 <26.3'
+version = "${project.mod_version}+mc${minecraftTarget}"
 group = project.maven_group
 
 dependencies {
@@ -21,10 +23,10 @@ dependencies {
 
 processResources {
 	inputs.property "version", project.version
-	inputs.property "minecraft_version", project.minecraft_version
+	inputs.property "minecraft_range", minecraftRange
 
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version, "minecraft_version": project.minecraft_version
+		expand "version": project.version, "minecraft_range": minecraftRange
 	}
 }
 

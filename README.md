@@ -5,11 +5,13 @@ Minecraft mod (Fabric) for perspective switching keybinds!
 
 Version 5.0.0 targets Minecraft Java 26.1, 26.1.1, 26.1.2, 26.2 and 26.3 with
 Fabric Loader 0.20.1 or newer, Java 25, and Fabric API for your Minecraft version.
-Use the JAR whose `+mc` suffix matches your exact Minecraft version.
-GitHub Actions provides one `Camera-Keybinds-all-supported-versions` download.
-Extract it, follow `READ-ME-FIRST.txt`, and install only the matching JAR.
-Separate builds preserve the correct default keys after the SDL input changes
-in 26.3. Minecraft 1.21.9–1.21.11 users should use Camera Keybinds 4.0.0.
+There are two downloads, each containing one playable JAR:
+
+- **26.1 and 26.2:** `camera_keybinds-5.0.0+mc26.1-26.2.jar` (also supports 26.1.1 and 26.1.2).
+- **26.3:** `camera_keybinds-5.0.0+mc26.3.jar` (uses the new SDL keyboard codes).
+
+Install only one of these JARs. Minecraft 1.21.9–1.21.11 users should use
+Camera Keybinds 4.0.0.
 
 Build with `./gradlew build` (or `gradlew.bat build` on Windows) using JDK 25.
 To build another target, override `minecraft_version` and `fabric_version`;

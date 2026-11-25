@@ -8,6 +8,21 @@ on: [pull_request, push]
 
 jobs:
   build:
+    strategy:
+      matrix:
+        include:
+          - minecraft: '26.1'
+            fabric: '0.145.1+26.1'
+            target: '26.1-26.2'
+          - minecraft: '26.1.1'
+            fabric: '0.145.4+26.1.1'
+          - minecraft: '26.1.2'
+            fabric: '0.155.3+26.1.2'
+          - minecraft: '26.2'
+            fabric: '0.161.0+26.2'
+          - minecraft: '26.3'
+            fabric: '0.167.0+26.3'
+            target: '26.3'
     runs-on: ubuntu-22.04
     steps:
       - name: checkout repository
@@ -21,20 +36,12 @@ jobs:
           distribution: 'microsoft'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
-      - name: build all supported Minecraft versions
-        run: |
-          ./gradlew clean
-          ./gradlew build -Pminecraft_version=26.1 -Pfabric_version=0.145.1+26.1
-          ./gradlew build -Pminecraft_version=26.1.1 -Pfabric_version=0.145.4+26.1.1
-          ./gradlew build -Pminecraft_version=26.1.2 -Pfabric_version=0.155.3+26.1.2
-          ./gradlew build -Pminecraft_version=26.2 -Pfabric_version=0.161.0+26.2
-          ./gradlew build -Pminecraft_version=26.3 -Pfabric_version=0.167.0+26.3
-          cp .github/download-guide.txt build/libs/READ-ME-FIRST.txt
-      - name: download bundle
+      - name: build
+        run: ./gradlew build -Pminecraft_version=${{ matrix.minecraft }} -Pfabric_version=${{ matrix.fabric }}
+      - name: upload mod JAR
+        if: ${{ matrix.target != '' }}
         uses: actions/upload-artifact@v7
         with:
-          name: Camera-Keybinds-all-supported-versions
+          name: Camera-Keybinds-${{ matrix.target }}
           if-no-files-found: error
-          path: |
-            build/libs/
-            !build/libs/*-sources.jar
+          path: build/libs/*+mc${{ matrix.target }}.jar
